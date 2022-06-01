@@ -1,0 +1,9 @@
+date = input("Add the day in format Day Month: ")
+# assert int(date[:2])<=12, "Max MM is 12."
+# assert int(date[3:])<=30, "Max DD is 28."
+lits = date.split(' ')
+lits=[i.rjust(2, '0') if len(i)==1 else i for i in lits]
+lits[0], lits[1] = lits[1], lits[0]
+date = '2020-' + '-'.join(lits)
+assert int(date[5:7])<=12, "Max MM is 12."
+assert int(date[-2:])<=30, "Max DD is 28."
